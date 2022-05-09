@@ -24,6 +24,8 @@ Load the menu items in the navbar using a menu.service that thakes its values fr
 ["Home", "Food", "Admin"]
 ```
 
+A solution is provided in the folder `food-app`.
+
 ## Step-by-Step Guide:
 
 Create Angular Project:
@@ -31,6 +33,25 @@ Create Angular Project:
 ```
 ng new food-app-l0
 cd food-app-l0
+```
+
+>Note: Add routing to the project as it will be used later on. Choose scss as your prefered style schematic. You could change this later on in `angular.json`:
+
+```
+"@schematics/angular:component": {
+          "style": "scss"
+}
+```
+
+Change your TypeScript configuration (`tsconfig.json`) to avoid strictPropertyInitialization by setting its value to false:
+
+```
+"compilerOptions": {
+  "baseUrl": "./",
+  "outDir": "./dist/out-tsc",
+  "forceConsistentCasingInFileNames": true,
+  "strict": true,
+  "strictPropertyInitialization": false,
 ```
 
 Add the components:
