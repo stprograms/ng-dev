@@ -47,8 +47,10 @@ $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";"
 Write-Host "Installing Angular - 6/6" -ForegroundColor yellow
 
 npx @angular/cli@latest analytics off
-npm i -g @angular/cli
-npm i -g json-server
+npm i -g @angular/cli json-server http-server
+
+# Allow script execution (Angular CLI) in VS Code
+Set-ExecutionPolicy unrestricted
 
 # Finished Msg
 Write-Host "Finished Software installation" -ForegroundColor yellow

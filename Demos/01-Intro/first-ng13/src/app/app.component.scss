@@ -1,26 +1,26 @@
 .container{
-    background-color: lightgray;
-    height: 100vh
-}
-
-.navbar{    
-    background-color: lightblue;
-    height: 10vh;
+    background-color: yellow;
+    height: 100vh;
 }
 
 .maincontainer{
     display: flex;
     flex-direction: row;
-    background-color: yellowgreen;
-    height: 90vh;
+    height: 90vh;    
+}
+
+.navbar{
+    background-color: lightblue;
+    height: 10vh;
 }
 
 .sidebar{
-    background-color: lightpink;
+    background-color: lightcoral;
     min-width: 200px;
 }
 
 .main{
     background-color: lightgreen;
     flex-grow: 1;
+    padding: 2rem;
 }
