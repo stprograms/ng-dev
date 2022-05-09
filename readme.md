@@ -20,3 +20,8 @@ Companion Material for Angular Developer Basics by [Alexander Pajer](https://www
 ## Contributing
 
 Feel free to contribute. When contribute implement your changes / additions on a feature branch in your fork and issue a pull request after completion. An introduction video into forks and pull requests can be found [here](https://www.youtube.com/watch?v=nT8KGYVurIU)
+
+
+## Testing 
+
+This is a simple test if the connection to github works
