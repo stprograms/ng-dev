@@ -1,0 +1,11 @@
+<app-food-list
+    [foods]="foods"
+    (selectedFood)="onFoodSelected($event)">
+
+</app-food-list>
+
+<app-food-edit *ngIf="current != null"
+    [food]="current"
+    (saveFood)="onFoodSaved($event)">
+
+</app-food-edit>

@@ -1,0 +1,24 @@
+<div *ngIf="food != null">
+    <table>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" [(ngModel)]="food.name"/></td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td><input type="number" [(ngModel)]="food.price"/></td>
+        </tr>
+        <tr>
+            <td>Calories</td>
+            <td><input type="number" [(ngModel)]="food.calories"/></td>
+        </tr>
+        <tr>
+            <td>
+                <button (click)="doSave()">
+                    Save
+                </button>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+</div>
