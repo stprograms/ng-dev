@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuService } from '../menu.service';
+import { MenuItem } from '../menuItem';
 
 @Component({
   selector: 'app-navbar',
@@ -10,7 +11,7 @@ export class NavbarComponent implements OnInit {
 
   constructor(private ms: MenuService) { }
 
-  navItems:string[] = [];
+  navItems:MenuItem[] = [];
   
   ngOnInit(): void {
     this.ms.getMenuItems().subscribe( data=> {

@@ -1,3 +1,14 @@
 [
-    "Home", "Food", "Admin"
+    {
+        "name": "Home",
+        "path": ""
+    },
+    {
+        "name": "Food",
+        "path": "food"
+    },
+    {
+        "name": "About",
+        "path": "about"
+    }
 ]

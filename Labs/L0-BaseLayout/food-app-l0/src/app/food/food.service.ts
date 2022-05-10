@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { FoodItem } from './food-item';
+import { FoodItem } from './foodItem';
 import { Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
 /**
  * @brief Service fetching the list of foods
  */
+@Injectable({
+  providedIn: 'root'
+})
 export class FoodService {
 
   constructor(private http: HttpClient) { }

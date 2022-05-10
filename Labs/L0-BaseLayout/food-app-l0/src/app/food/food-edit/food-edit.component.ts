@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FoodItem } from '../food-item';
+import { FoodItem } from '../foodItem';
 import { FormsModule} from '@angular/forms';
 
 @Component({

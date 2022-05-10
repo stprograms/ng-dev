@@ -13,7 +13,11 @@
         <td>{{ f.name }}</td>
         <td>{{ f.price }}</td>
         <td>{{ f.calories }}</td>
-        <td><a (click)="selectFood(f)">Select</a></td>
+        <td>
+          <!-- <a (click)="selectFood(f)">Select</a> -->
+          <button 
+            (click)="selectFood(f)">Select</button>
+        </td>
       </tr>
     </tbody>
   </table>

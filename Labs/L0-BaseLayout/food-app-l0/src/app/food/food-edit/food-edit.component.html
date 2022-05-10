@@ -2,15 +2,27 @@
     <table>
         <tr>
             <td>Name</td>
-            <td><input type="text" [(ngModel)]="food.name"/></td>
+            <td>
+                <input placeholder="Set Name"
+                    type="text" 
+                    [(ngModel)]="food.name"/>
+            </td>
         </tr>
         <tr>
             <td>Price</td>
-            <td><input type="number" [(ngModel)]="food.price"/></td>
+            <td>
+                <input type="number" 
+                    placeholder="Set the food price"
+                    [(ngModel)]="food.price"/>
+            </td>
         </tr>
         <tr>
             <td>Calories</td>
-            <td><input type="number" [(ngModel)]="food.calories"/></td>
+            <td>
+                <input type="number"
+                    placeholder="Set the calories"
+                    [(ngModel)]="food.calories"/>
+            </td>
         </tr>
         <tr>
             <td>

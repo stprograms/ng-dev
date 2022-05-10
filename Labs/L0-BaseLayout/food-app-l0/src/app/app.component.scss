@@ -1,19 +1,19 @@
-.navbar{
+.navbar {
     background-color: lavender;
-    height: 150px
+    min-height: 30px
 }
 
-.sidebar{
+.sidebar {
     background-color: yellow;
     min-width: 200px;
 }
 
-.main{
+.main {
     background-color: lightgray;
     width: calc(100vw - 200px);
 }
 
-.mainrow{
+.mainrow {
     display: flex;
     flex-direction: row;
     height: calc(100vh - 150px);

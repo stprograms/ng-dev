@@ -11,6 +11,7 @@ import { FoodContainerComponent } from './food/food-container/food-container.com
 import { FoodListComponent } from './food/food-list/food-list.component';
 import { FoodEditComponent } from './food/food-edit/food-edit.component';
 import { FormsModule } from '@angular/forms';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -18,9 +19,7 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     SidemenuComponent,
     NavbarComponent,
-    FoodContainerComponent,
-    FoodListComponent,
-    FoodEditComponent
+    AboutComponent
   ],
   imports: [
     BrowserModule,
