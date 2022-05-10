@@ -6,8 +6,8 @@ import { EditorComponent } from './shared/editor/editor.component';
 import { UploaderComponent } from './shared/uploader/uploader.component';
 import { AdminComponent } from './admin/admin.component';
 import { IsAuthRouteGuard } from './IsAuthRouteGuard';
-import { AdminAComponent } from './admin-a/admin-a.component';
-import { AdminBComponent } from './admin-b/admin-b.component';
+import { AdminAComponent } from './admin/admin-a/admin-a.component';
+import { AdminBComponent } from './admin/admin-b/admin-b.component';
 import { SkillsListComponent } from './skills/skills-list/skills-list.component';
 import { SkillsEditComponent } from './skills/skills-edit/skills-edit.component';
 import { SkillResolverService } from './skills/skill-resolver.service';
@@ -19,6 +19,11 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
+    path: 'demos',
+    loadChildren: () =>
+      import('./demos/demos.module').then((m) => m.DemosModule),
+  },
+  {
     path: 'skills',
     component: SkillsListComponent,
   },
@@ -26,11 +31,6 @@ const routes: Routes = [
     path: 'skills/:id',
     component: SkillsEditComponent,
     resolve: { skillData: SkillResolverService },
-  },
-  {
-    path: 'demos',
-    loadChildren: () =>
-      import('./demos/demos.module').then((m) => m.DemosModule),
   },
   {
     path: 'admin',

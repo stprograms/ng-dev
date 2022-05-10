@@ -15,7 +15,7 @@ export class StructDirectivesComponent implements OnInit {
 
   vouchers: Voucher[];
 
-  showDivOne = true;
+  showTextOne = true;
 
   currentDirection: DirectionEnum = DirectionEnum.East;
   direction = DirectionEnum;

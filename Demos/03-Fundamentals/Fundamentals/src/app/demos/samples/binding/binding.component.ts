@@ -12,7 +12,7 @@ import { delay } from 'rxjs/operators';
 export class BindingComponent implements OnInit {
   constructor(private ps: PersonService) {}
 
-  hide: boolean = false;
+  hide = false;
   persons: Person[];
   selectedPerson: Person = { id: 0, name: '', age: 0, gender: '' };
   latePerson: Person;

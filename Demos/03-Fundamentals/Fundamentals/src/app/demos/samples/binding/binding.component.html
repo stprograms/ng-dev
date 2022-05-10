@@ -4,7 +4,7 @@
   </mat-card-header>
   <mat-card-content fxLayout="column">
     <mat-form-field>
-      <label for="lblOneWay">One Way Property Binding</label> <br />
+      <label for="lblOneWay">One Way Attribute Binding</label> <br />
       <input
         matInput
         id="lblOneWay"
@@ -37,6 +37,21 @@
 
 <mat-card>
   <mat-card-header>
+    <mat-card-title
+      >Binding and Nullability <ng-container *ngIf="latePerson"> - {{ latePerson?.name }} Arriving
+        Late</ng-container>      
+      </mat-card-title
+    >
+  </mat-card-header>
+  <mat-card-content>
+    <div *ngIf="latePerson">
+      <pre>{{ latePerson | json }}</pre>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
     <mat-card-title>Ode to my sighthounds</mat-card-title>
   </mat-card-header>
 
@@ -53,21 +68,6 @@
       <select [(ngModel)]="selectedPerson" style="width: 150px">
         <option *ngFor="let p of persons" [ngValue]="p">{{ p.name }}</option>
       </select>
-    </div>
-  </mat-card-content>
-</mat-card>
-
-<mat-card>
-  <mat-card-header>
-    <mat-card-title
-      >Binding Nullable Types - {{ latePerson?.name }} Arriving
-      Late</mat-card-title
-    >
-  </mat-card-header>
-
-  <mat-card-content>
-    <div *ngIf="latePerson">
-      <pre>{{ latePerson | json }}</pre>
     </div>
   </mat-card-content>
 </mat-card>

@@ -3,11 +3,11 @@
 <div *ngFor="let p of persons">
   <app-person-edit
     [person]="p"
-    [editMode]="false"
+    [editMode]="true"
     (savePerson)="savePersonToDB($event)"
     #personRef
   ></app-person-edit>
-  <button mat-raised-button (click)="personRef.doDelete()" color="primary">
+  <button mat-raised-button (click)="personRef.doDelete()" color="accent">
     Delete Person
   </button>
 </div>

@@ -32,6 +32,7 @@ export class DemoContainerComponent implements OnInit {
   ngOnInit() {
     this.setMenu();
     this.setMetadata();
+    this.setMenuPosition();
     this.getWorbenchStyle();
     this.subscribeLoading();
   }
@@ -43,9 +44,9 @@ export class DemoContainerComponent implements OnInit {
   }
 
   setMenuPosition() {
-    this.ms.position$.subscribe(
-      (mode: any) => (this.sidenavMode = mode as MatDrawerMode)
-    );
+    this.ms.position$.subscribe((mode: any) => {
+      this.sidenavMode = mode as MatDrawerMode;
+    });
   }
 
   setMenu() {

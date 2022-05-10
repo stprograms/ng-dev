@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import axios from 'axios';
-import { Voucher } from '../model';
 import { Skill } from '../skills/skill.model';
 import { SkillsService } from '../skills/skills.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-services',
@@ -10,9 +10,11 @@ import { SkillsService } from '../skills/skills.service';
   styleUrls: ['./services.component.scss'],
 })
 export class ServicesComponent implements OnInit {
+  // Antipattern
   url = 'http://localhost:3000/skills';
+  skills: Skill[];
 
-  constructor(private skillsService: SkillsService) {}
+  constructor(private skillsService: SkillsService, private http: HttpClient) {}
 
   ngOnInit() {}
 
@@ -20,39 +22,20 @@ export class ServicesComponent implements OnInit {
     console.log(`logPipe() - ${msg}:`, data);
   };
 
-  getMockPromise(): Promise<string> {
-    return new Promise<string>((resolve, reject) => {
-      setTimeout(() => {
-        console.log('Async Task Complete');
-        if (true) {
-          resolve(JSON.stringify({ Id: 1, Person: 'Hugo Wolf' }));
-        } else {
-          reject('Big Error: Promise rejected');
-        }
-      }, 1000);
-    });
-  }
-
-  usingPromises() {
-    this.getMockPromise()
-      .then((data) => this.logPipe('Date received from getMockPromise', data))
-      .catch((err) => console.log('Err:', err));
-  }
-
   usingFetch() {
     fetch(this.url)
-      .then<Voucher[]>((resp: Response) => {
+      .then((resp: Response) => {
         console.log('Response received from fetch', resp);
         return resp.json(); // Notice Response Object
       })
-      .then((data: any[]) => {
+      .then((data: Skill[]) => {
         console.log('Data received from fetch', data);
       });
   }
 
   usingFetchAwait() {
     async function getSkills() {
-      const response = await fetch('http://localhost:3000/skills');
+      const response = await fetch(this.url);
       const voucher = await response.json();
       console.log('Data received using fetch - await');
       console.log(voucher);
@@ -64,9 +47,6 @@ export class ServicesComponent implements OnInit {
   postFetch() {
     // Make sure you have installed json-server: npm i -g json-server
     // Run it: json-server db.json -> provides skills api
-
-    const api = 'http://localhost:3000/';
-
     const param: Skill = {
       name: 'Azure',
       completed: true,
@@ -81,7 +61,7 @@ export class ServicesComponent implements OnInit {
       },
     };
 
-    fetch(api, options)
+    fetch(this.url, options)
       .then(function (res) {
         if (res.ok) {
           return res.statusText;
@@ -94,7 +74,7 @@ export class ServicesComponent implements OnInit {
   }
 
   async usingAxios() {
-    const api = 'http://localhost:3000/skills';
+    const api = this.url;
 
     await axios.get(api).then((result) => console.log(result.data));
 
@@ -106,9 +86,21 @@ export class ServicesComponent implements OnInit {
     axios.post(api, param);
   }
 
+  //Antipattern
+  useClientInComponent() {
+    //untyped
+    this.http.get(this.url).subscribe((data) => console.log(data));
+    //typed
+    this.http.get<Skill[]>(this.url).subscribe((data) => console.log(data));
+  }
+
   consumeService() {
-    this.skillsService.getSkills().subscribe((data: Skill[]) => {
-      console.log('Data from skillsService ', data);
-    });
+    this.skillsService.getSkills().subscribe(
+      //handles event
+      (data: Skill[]) => {
+        console.log('Data from skillsService ', data);
+        this.skills = data;
+      }
+    );
   }
 }

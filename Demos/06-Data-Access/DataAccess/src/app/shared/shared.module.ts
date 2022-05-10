@@ -10,6 +10,7 @@ import { IntroComponent } from './intro/intro.component';
 import { MarkdownRendererComponent } from './markdown-renderer/markdown-renderer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidePanelComponent } from './side-panel/side-panel.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const mods = [
   NavbarComponent,
@@ -25,6 +26,7 @@ const mods = [
     FormsModule,
     RouterModule,
     MaterialModule,
+    FlexLayoutModule,
     MarkdownModule.forRoot({
       loader: HttpClient,
     }),

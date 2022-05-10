@@ -11,6 +11,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SidePanelComponent } from './side-panel/side-panel.component';
 import { IntroComponent } from './intro/intro.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const mods = [
   NavbarComponent,
@@ -27,6 +28,7 @@ const mods = [
     FormsModule,
     RouterModule,
     MaterialModule,
+    FlexLayoutModule,
     MarkdownModule.forRoot({
       loader: HttpClient,
     }),

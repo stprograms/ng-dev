@@ -11,6 +11,7 @@ import { SnackbarService } from '../../shared/snackbar/snackbar.service';
 })
 export class SkillsEditComponent implements OnInit {
   skill: Skill = { id: 0, name: '', hours: 1, completed: false };
+  isDisabled = false;
 
   constructor(
     private service: SkillsService,
@@ -41,9 +42,9 @@ export class SkillsEditComponent implements OnInit {
     this.getSkill(id);
 
     // query params
-    const readonly = this.route.snapshot.queryParams['readonly'];
-    if (readonly != null) {
-      console.log(`Page is readonly: ${readonly}`);
+    this.isDisabled = this.route.snapshot.queryParams['readonly'];
+    if (this.isDisabled != null) {
+      console.log(`Page is readonly: ${this.isDisabled}`);
     }
     const clientid = this.route.snapshot.queryParams['clientid'];
     if (clientid) {
@@ -55,6 +56,7 @@ export class SkillsEditComponent implements OnInit {
     if (fragments != undefined) {
       console.log(`Section to navigate to: ${fragments}`);
     }
+
     //state
     const state = history.state.data;
     if (state != null) {

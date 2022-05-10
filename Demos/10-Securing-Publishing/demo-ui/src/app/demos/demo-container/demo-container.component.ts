@@ -27,13 +27,12 @@ export class DemoContainerComponent implements OnInit {
     private route: ActivatedRoute,
     public ms: MenuService,
     public ls: LoadingService
-  ) {
-    this.title = 'Typescript';
-  }
+  ) {}
 
   ngOnInit() {
     this.setMenu();
     this.setMetadata();
+    this.setMenuPosition();
     this.getWorbenchStyle();
     this.subscribeLoading();
   }
@@ -45,9 +44,9 @@ export class DemoContainerComponent implements OnInit {
   }
 
   setMenuPosition() {
-    this.ms.position$.subscribe(
-      (mode: any) => (this.sidenavMode = mode as MatDrawerMode)
-    );
+    this.ms.position$.subscribe((mode: any) => {
+      this.sidenavMode = mode as MatDrawerMode;
+    });
   }
 
   setMenu() {

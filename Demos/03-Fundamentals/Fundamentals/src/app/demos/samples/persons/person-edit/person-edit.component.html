@@ -28,8 +28,8 @@
         [(ngModel)]="person.gender"
         fxLayoutGap="16px"
       >
-        <mat-radio-button value="male">Male</mat-radio-button>
-        <mat-radio-button value="female">Female</mat-radio-button>
+        <mat-radio-button value="male" [disabled]="!editMode" color="primary" >Male</mat-radio-button>
+        <mat-radio-button value="female"  [disabled]="!editMode" color="primary" >Female</mat-radio-button>
       </mat-radio-group>
     </div>
   </mat-card-content>

@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SidePanelComponent } from './side-panel/side-panel.component';
 import { SumComponent } from './sum/sum.component';
 import { LoadingComponent } from './loading/loading.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const mods = [
   NavbarComponent,
@@ -29,6 +30,7 @@ const mods = [
     FormsModule,
     RouterModule,
     MaterialModule,
+    FlexLayoutModule,
     MarkdownModule.forRoot({
       loader: HttpClient,
     }),

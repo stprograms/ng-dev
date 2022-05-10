@@ -12,6 +12,6 @@ export class PersonService {
   constructor(private http: HttpClient) {}
 
   getPersons(): Observable<Person[]> {
-    return this.http.get<Person[]>(environment.personApi).pipe(delay(2000));
+    return this.http.get<Person[]>(environment.personApi);
   }
 }

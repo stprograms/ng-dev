@@ -14,7 +14,7 @@ export class MenuService {
 
   private visible = true;
   visible$: BehaviorSubject<boolean> = new BehaviorSubject(this.visible);
-  position$: BehaviorSubject<string> = new BehaviorSubject('side');
+  position$: BehaviorSubject<string> = new BehaviorSubject('over');
 
   private handleChange() {
     this.mediaObserver

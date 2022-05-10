@@ -14,8 +14,7 @@ export class MenuService {
 
   private visible = true;
   visible$: BehaviorSubject<boolean> = new BehaviorSubject(this.visible);
-  private position = 'side';
-  position$: BehaviorSubject<string> = new BehaviorSubject(this.position);
+  position$: BehaviorSubject<string> = new BehaviorSubject('over');
 
   private handleChange() {
     this.mediaObserver
@@ -34,6 +33,7 @@ export class MenuService {
     return of([
       { label: 'Home', url: '' },
       { label: 'Demos', url: 'demos' },
+      { label: 'Skills', url: 'skills' },
     ]);
   }
 

@@ -8,7 +8,7 @@
     fxLayoutAlign="center start"
   >
     <mat-form-field>
-      <input matInput type="text" placeholder="Name" [(ngModel)]="skill.name" />
+      <input matInput type="text" placeholder="Name" [(ngModel)]="skill.name" [disabled]="isDisabled"  />
     </mat-form-field>
     <mat-form-field>
       <input
@@ -16,12 +16,13 @@
         type="number"
         placeholder="Price"
         [(ngModel)]="skill.hours"
+        [disabled]="isDisabled" 
       />
     </mat-form-field>
-    <mat-slide-toggle ngModel name="skill.completed">Complete</mat-slide-toggle>
+    <mat-slide-toggle ngModel name="skill.completed" [disabled]="isDisabled" >Complete</mat-slide-toggle>
   </mat-card-content>
   <mat-card-actions align="end">
-    <button mat-button (click)="doCancel()">Cancel</button>
-    <button mat-button (click)="saveSkill()">Save</button>
+    <button mat-raised-button (click)="doCancel()" color="accent">Cancel</button>
+    <button mat-raised-button (click)="saveSkill()" color="accent">Save</button>
   </mat-card-actions>
 </mat-card>

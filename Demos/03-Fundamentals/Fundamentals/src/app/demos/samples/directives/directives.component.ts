@@ -19,7 +19,7 @@ export class DirectivesComponent implements OnInit {
   }
 
   changeClass() {
-    this.cssclass = this.cssclass === 'big' ? 'small' : 'big';
+    this.cssclass = this.cssclass == 'big' ? 'small' : 'big';
   }
 
   getClass() {

@@ -2,9 +2,13 @@
 
 [Angular Template Syntax](https://angular.io/guide/template-syntax)
 
-[Pipes](https://angular.io/guide/pipes)
+[HTML Attributes Reference](https://www.w3schools.com/tags/ref_attributes.asp)
+
+[HTML Events Referenc](https://www.w3schools.com/tags/ref_eventattributes.asp)
 
 [Attribute Directives](https://angular.io/guide/attribute-directives)
+
+[Pipes](https://angular.io/guide/pipes)
 
 ## Configure Creation of Unit Test Files - \*.spec.ts
 

@@ -12,14 +12,16 @@ export class ObjectLiteralsComponent implements OnInit {
   ngOnInit() {}
 
   objectsBasics() {
-    // Plain old JavaScript
+    // Plain old JavaScript -> deprecated pattern
     const myPerson = new Object();
     // myPerson.smile = function() {
     //   console.log;
     // };
 
     const otherPerson = {} as any;
-    otherPerson.smile = function () {};
+    otherPerson.smile = function () {
+      console.log('i am smiling');
+    };
 
     const person: any = { Id: 1, Name: 'Giro' };
     person.walk = () => console.log(`I am ${person.Name} and I'm walking`);
@@ -46,14 +48,14 @@ export class ObjectLiteralsComponent implements OnInit {
     }
 
     const person: any = { Id: 1, Name: 'Alexander' };
-    const cloned = { ...person };
+    const cloned = { ...person }; //cloned using spread
     cloned.Name = 'Sabine';
   }
 
   destructuring() {
     let fullPerson = { firstName: 'John', name: 'Doe', age: 17 };
-    let { firstName, name } = fullPerson;
-    console.log(firstName + ', ' + name);
+    let { firstName, age } = fullPerson;
+    console.log(firstName + ', ' + age); //implicit cast of age
   }
 
   objAssign() {

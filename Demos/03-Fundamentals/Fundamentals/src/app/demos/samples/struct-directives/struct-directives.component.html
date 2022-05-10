@@ -19,7 +19,7 @@
           <td>{{ v.ID }}</td>
           <td>{{ v.Text }}</td>
           <td>{{ v.Amount }}</td>
-          <td><a (click)="showVoucher(v)">Edit</a></td>
+          <td><a (click)="showVoucher(v)" class="clickable">Edit</a></td>
         </tr>
       </tbody>
     </table>
@@ -44,17 +44,17 @@
     <mat-card-title> @If ... [else] </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <input type="checkbox" [(ngModel)]="showDivOne" />
+    <input type="checkbox" [(ngModel)]="showTextOne" />
     <label>Please check to change value for "showDivOne":</label> <br />
-    Current value for "showDivOne": {{ showDivOne }}  
+    Current value for "showTextOne": {{ showTextOne }}  
     
     <!-- also renders the div -->
-    <div *ngIf="showDivOne"><h5>Div 1</h5></div>
-    <div *ngIf="!showDivOne"> <h5>Not Div 1</h5> </div>
+    <div *ngIf="showTextOne">Text One</div>
+    <div *ngIf="!showTextOne">Text Two</div>
 
-    <!-- ng-container will no be reandered -->
-    <ng-container *ngIf="showDivOne"><h5>Div 1</h5></ng-container>
-    <ng-container *ngIf="!showDivOne"><h5>Not Div 1</h5></ng-container>
+    <!-- ng-container will not be included in the DOM -->
+    <ng-container *ngIf="showTextOne">Text One</ng-container>
+    <ng-container *ngIf="!showTextOne">Text Two</ng-container>
        
   </mat-card-content>
 </mat-card>

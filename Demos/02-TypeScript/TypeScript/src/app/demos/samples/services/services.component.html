@@ -3,15 +3,32 @@
     <mat-card-title> Async & Services </mat-card-title>
   </mat-card-header>
   <mat-card-content fxLayout="column">
-    <button mat-raised-button (click)="usingPromises()" color="primary">Using Promise</button>
-    <button mat-raised-button (click)="usingFetch()" color="primary">Using Fetch</button>
+    <button mat-raised-button (click)="usingFetch()" color="primary">
+      Using Fetch
+    </button>
     <button mat-raised-button (click)="usingFetchAwait()" color="primary">
       Using Fetch Await
     </button>
-    <button mat-raised-button (click)="postFetch()" color="primary">Post using Fetch</button>
-    <button mat-raised-button (click)="usingAxios()" color="primary">Using Axios</button>
+    <button mat-raised-button (click)="postFetch()" color="primary">
+      Post using Fetch
+    </button>
+    <button mat-raised-button (click)="usingAxios()" color="primary">
+      Using Axios
+    </button>
+    <button mat-raised-button (click)="useClientInComponent()" color="primary">
+      Use HttpClient in Component
+    </button>
     <button mat-raised-button (click)="consumeService()" color="primary">
       Consuming Servics
     </button>
+  </mat-card-content>
+</mat-card>
+
+<mat-card *ngIf="skills">
+  <mat-card-content>
+    <div fxLayout="column" fxLayoutGap="10px">
+      <h1>The Skills:</h1>
+      <div *ngFor="let sk of skills">{{ sk.name }}</div>
+    </div>
   </mat-card-content>
 </mat-card>

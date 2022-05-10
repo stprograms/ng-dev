@@ -1,5 +1,8 @@
 <mat-toolbar color="accent">
   <mat-toolbar-row fxLayout="column" fxLayoutAlign="end center" fxLayoutGap="15px">
+    <button mat-mini-fab [routerLink]="'/'">
+      <mat-icon fxFlexAlign="center" class="cmdIcon">home</mat-icon>
+    </button>
     <button mat-mini-fab (click)="showUpload()">
       <mat-icon fxFlexAlign="center" class="cmdIcon">cloud_upload</mat-icon>
     </button>

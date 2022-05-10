@@ -12,7 +12,6 @@ export class NgTemplateComponent implements OnInit {
   constructor(private ps: PersonService) {}
 
   persons: Person[];
-  loading = true;
 
   ngOnInit(): void {
     this.ps
@@ -20,7 +19,6 @@ export class NgTemplateComponent implements OnInit {
       .pipe(delay(1500))
       .subscribe((data) => {
         this.persons = data;
-        this.loading = false;
       });
   }
 }
