@@ -1,11 +1,8 @@
-.menu{
-    display: flex; 
-    width: 100%;
-    flex-direction: row;
-    padding: 1rem;
+mat-toolbar {
+    margin-bottom: 0.8rem;
 }
 
-.menuItem{
+.menuItem {
     margin-right: 0.5rem;
     cursor: pointer;
 }

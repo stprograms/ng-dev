@@ -7,11 +7,11 @@ import { HomeComponent } from './home/home.component';
 import { SidemenuComponent } from './shared/sidemenu/sidemenu.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { HttpClientModule} from '@angular/common/http';
-import { FoodContainerComponent } from './food/food-container/food-container.component';
-import { FoodListComponent } from './food/food-list/food-list.component';
-import { FoodEditComponent } from './food/food-edit/food-edit.component';
 import { FormsModule } from '@angular/forms';
 import { AboutComponent } from './about/about.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,10 @@ import { AboutComponent } from './about/about.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

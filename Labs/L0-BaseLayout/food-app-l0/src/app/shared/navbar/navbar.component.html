@@ -1,5 +1,11 @@
-<div class="menu">
-  <div class="menuItem" *ngFor="let item of navItems" [routerLink]="item.path">
-    {{ item.name }}
-  </div>
-</div>
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <div
+            class="menuItem"
+            *ngFor="let item of navItems"
+            [routerLink]="item.path"
+        >
+            {{ item.name }}
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>

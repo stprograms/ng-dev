@@ -1,20 +1,13 @@
-.navbar {
-    background-color: lavender;
-    min-height: 30px;
+.grid {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
 }
 
 .sidebar {
     background-color: yellow;
-    min-width: 200px;
 }
 
-.main {
+/*.main {
     background-color: lightgray;
-    width: calc(100vw - 200px);
-}
-
-.mainrow {
-    display: flex;
-    flex-direction: row;
-    height: calc(100vh - 150px);
-}
+}*/
