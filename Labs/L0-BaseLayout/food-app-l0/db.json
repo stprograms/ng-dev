@@ -29,12 +29,6 @@
       "name": "asdf",
       "calories": 0,
       "price": 0
-    },
-    {
-      "id": 9,
-      "name": "Ein neues Rezept",
-      "calories": 4,
-      "price": 54
     }
   ]
 }
