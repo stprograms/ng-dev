@@ -3,7 +3,7 @@
  */
 export class MenuItem {
     /// Display name of the menu item
-    name: string = "Unknown";
+    label: string = "Unknown";
     /// route of the menu entry
-    path: string = "";
+    url: string = "";
 }

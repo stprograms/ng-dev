@@ -1,14 +1,14 @@
 [
     {
-        "name": "Home",
-        "path": ""
+        "label": "Home",
+        "url": ""
     },
     {
-        "name": "Food",
-        "path": "food"
+        "label": "Food",
+        "url": "food"
     },
     {
-        "name": "About",
-        "path": "about"
+        "label": "About",
+        "url": "about"
     }
 ]

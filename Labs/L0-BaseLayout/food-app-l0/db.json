@@ -26,7 +26,13 @@
     },
     {
       "id": 8,
-      "name": "asdf",
+      "name": "asdf Neu",
+      "calories": 11,
+      "price": 45
+    },
+    {
+      "id": 9,
+      "name": "Hello World",
       "calories": 0,
       "price": 0
     }

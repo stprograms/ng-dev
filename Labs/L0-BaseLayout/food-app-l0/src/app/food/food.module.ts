@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { FoodRoutingModule } from './food-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FoodContainerComponent } from './food-container/food-container.component';
 import { FoodListComponent } from './food-list/food-list.component';
 import { FoodEditComponent } from './food-edit/food-edit.component';
@@ -20,6 +20,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CommonModule,
     FoodRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     MaterialModule,
     FlexLayoutModule
   ]

@@ -1,4 +1,28 @@
 <div
+    gdAreas="navbar | mainrow"
+    gdRows="70px auto"
+    gdColumns="auto"
+    class="grid"
+>
+    <div gdArea="navbar"><app-navbar></app-navbar></div>
+    <!--<div gdArea=loading><app-loading *ngIf="ls.isLoading | async"></app-loading> </div>-->
+    <div gdArea="mainrow" class="main">
+        <mat-sidenav-container>
+            <mat-sidenav
+                #sidenav
+                [opened]="ms.sideNavVisible | async"
+                [mode]="mode"
+            >
+                <app-sidemenu></app-sidemenu>
+            </mat-sidenav>
+            <mat-sidenav-content [ngStyle]="getWorbenchStyle()">
+                <router-outlet></router-outlet>
+            </mat-sidenav-content>
+        </mat-sidenav-container>
+    </div>
+</div>
+
+<!-- <div
     class="grid"
     gdAreas="navbar navbar | sidebar main"
     gdAreas.lt-md="navbar |main"
@@ -16,4 +40,4 @@
     <div gdArea="main" class="main">
         <router-outlet></router-outlet>
     </div>
-</div>
+</div> -->

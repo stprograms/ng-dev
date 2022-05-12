@@ -1,11 +1,14 @@
 <mat-toolbar color="primary">
-    <mat-toolbar-row>
+    <mat-toolbar-row fxLayoutGap="1rem">
+        <div fxHide.gt-xs (click)="toggleMenu()" class="clickable">
+            <mat-icon color="accent">menu</mat-icon>
+        </div>
         <div
             class="menuItem"
             *ngFor="let item of navItems"
-            [routerLink]="item.path"
+            [routerLink]="item.url"
         >
-            {{ item.name }}
+            {{ item.label }}
         </div>
     </mat-toolbar-row>
 </mat-toolbar>

@@ -14,9 +14,12 @@ export class NavbarComponent implements OnInit {
   navItems:MenuItem[] = [];
   
   ngOnInit(): void {
-    this.ms.getMenuItems().subscribe( data=> {
+    this.ms.getTopItems().subscribe( data=> {
       this.navItems = data;
     })
   }
 
+  toggleMenu() {
+    this.ms.toggleMenuVisibility();
+  }
 }
