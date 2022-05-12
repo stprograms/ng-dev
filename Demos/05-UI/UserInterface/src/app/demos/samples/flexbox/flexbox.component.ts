@@ -20,7 +20,7 @@ export class FlexboxComponent implements OnInit {
   toggleLayout() {
     this.currclass =
       this.currclass == 'flex-container'
-        ? 'flex-container-start'
+        ? 'flex-container-col'
         : 'flex-container';
     console.log(this.currclass);
   }

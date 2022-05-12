@@ -10,10 +10,6 @@ import { CalcParam } from './calculatorParam.model';
   styleUrls: ['./calculator.component.scss'],
 })
 export class CalculatorComponent {
-  // @Inject(MAT_DIALOG_DATA) public data: { amount: number } = {
-  //   amount: 0,
-  // };
-
   rates: Map<string, number> = new Map<string, number>();
   currencies: string[] = [];
   selectedCurrency = 'THB';

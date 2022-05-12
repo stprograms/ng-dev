@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form-array',
   templateUrl: './form-array.component.html',
   styleUrls: ['./form-array.component.scss'],
 })
-export class FormArrayComponent implements OnInit {
+export class FormArrayComponent {
   public skillForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
@@ -18,7 +18,9 @@ export class FormArrayComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  getElementsInFormArray() {
+    return (this.skillForm.controls['skillsGrp'] as FormArray).controls;
+  }
 
   addSkill() {
     const skillsGrp = this.skillForm.controls['skillsGrp'] as FormArray;
@@ -32,9 +34,5 @@ export class FormArrayComponent implements OnInit {
 
   saveForm() {
     console.log('saving ...', this.skillForm.value);
-  }
-
-  getElementsInFormArray() {
-    return (this.skillForm.controls['skillsGrp'] as FormArray).controls;
   }
 }

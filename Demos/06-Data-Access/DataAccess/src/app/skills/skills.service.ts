@@ -18,9 +18,7 @@ export class SkillsService {
   }
 
   getSkill(id): Observable<Skill> {
-    return this.getSkills().pipe(
-      map((skills) => skills.find((sk) => sk.id == id))
-    );
+    return this.httpClient.get<Skill>(`${this.url}/${id}`);
   }
 
   addSkill(skill: Skill): Observable<Skill> {

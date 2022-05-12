@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-binding',
@@ -20,7 +20,7 @@ export class CSSBindingComponent implements OnInit {
 
   setClasses() {
     const classes = {
-      extraClass: this.addClass,
+      thirdClass: this.addClass,
       anotherClass: this.anotherProperty,
     };
     return classes;

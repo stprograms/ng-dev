@@ -29,9 +29,10 @@ export class ObservableCrudComponent implements OnInit {
 
   getSkill() {
     this.fname = 'getskill()';
+    let id = 2;
 
     this.httpClient
-      .get<Skill>(`${environment.netcoreapi}skills/2`)
+      .get<Skill>(`${environment.netcoreapi}skills/${id}`)
       .subscribe((data) => {
         this.result = data;
       });
@@ -39,9 +40,8 @@ export class ObservableCrudComponent implements OnInit {
 
   insertSkill() {
     this.fname = 'insertskill()';
-
     const skill: Skill = { name: 'NgRx Data', hours: 8, completed: false };
-    console.log('skill to insert: ', skill);
+
     this.httpClient
       .post(`${environment.netcoreapi}skills`, skill)
       .subscribe((data) => {
@@ -53,17 +53,15 @@ export class ObservableCrudComponent implements OnInit {
 
   updateSkill() {
     this.fname = 'updateSkill()';
+    let id = 3;
 
     // let's get a skill to update
     this.httpClient
-      .get(`${environment.netcoreapi}skills/3`)
+      .get(`${environment.netcoreapi}skills/${id}`)
       .subscribe((data: Skill) => {
         const sktu: Skill = data;
-
         // Make update
         sktu.name = 'Updated by Angular';
-        console.log('skill to update: ', sktu);
-
         // Send Update
         this.httpClient
           .put(`${environment.netcoreapi}skills/`, sktu)
@@ -75,13 +73,13 @@ export class ObservableCrudComponent implements OnInit {
 
   deleteSkill() {
     this.fname = 'deleteSkill()';
-
     const id = 3;
+
     this.httpClient
       .delete(`${environment.netcoreapi}skills/${id}`)
-      .subscribe(() => {
+      .subscribe((status) => {
         this.result = `skill with id ${id} deleted`;
-        console.log(this.result);
+        console.log('status', status);
       });
   }
 }

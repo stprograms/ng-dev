@@ -11,6 +11,7 @@ import { Person } from '../person.model';
 import { PersonService } from '../person.service';
 import { asyncMailExistsValidator } from './asyncMailExistsValidator';
 import { NgForm } from '@angular/forms';
+import { single } from 'rxjs';
 
 @Component({
   selector: 'app-reactive-validation',
@@ -69,7 +70,7 @@ export class ReactiveValidationComponent implements OnInit {
     this.ps.save(personForm);
   }
 
-  //Sample for custom Validator
+  //Sample for custom sync validator
   validateName(control: FormControl): { [s: string]: boolean } {
     if (control.value === 'Hugo') {
       return { nameError: true };
@@ -91,8 +92,10 @@ export class ReactiveValidationComponent implements OnInit {
   }
 
   validateForm(form: FormGroup) {
-    form.updateValueAndValidity();
+    // validated single control
     form.controls['name'].updateValueAndValidity();
+    // validated form
+    form.updateValueAndValidity();
     console.log('form is valid:', form.valid);
   }
 }

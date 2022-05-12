@@ -45,7 +45,7 @@ const routes: Routes = [
         component: AdminBComponent,
       },
     ],
-    canActivate: [IsAuthRouteGuard, IsAdminGuard],
+    canActivate: [IsAuthRouteGuard],
   },
   { path: 'showeditor', component: EditorComponent, outlet: 'sidebarOutlet' },
   {

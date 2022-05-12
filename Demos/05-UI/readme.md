@@ -50,13 +50,13 @@ ng add @angular/material
 
 ### Material Tools & Documentation
 
-[Material Components](https://material.angular.io/components/)
-
 [Material Guideline](https://material.io/design/guidelines-overview/)
 
-[Material Icons](https://material.io/tools/icons/)
+[Material Components](https://material.angular.io/components/)
 
-[Material Tools](https://material.io/tools/)
+[Material Color Tool](https://material.io/resources/color)
+
+[Material Icons](https://material.io/tools/icons/)
 
 [Material Typography](https://material.angular.io/guide/typography)
 

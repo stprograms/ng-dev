@@ -33,6 +33,6 @@ export class PersonService {
   checkMailExists(email: string): Observable<boolean> {
     // Mocking Http Call to service to check weather user exists
     let exists = email == 'alexander.pajer@integrations.at';
-    return of(exists).pipe(delay(500));
+    return of(exists).pipe(delay(1500));
   }
 }

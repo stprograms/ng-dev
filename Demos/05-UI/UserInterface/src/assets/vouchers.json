@@ -67,16 +67,6 @@
       ]
     },
     {
-      "ID": 5,
-      "Text": "Inserted by WebApi",
-      "Date": "2016-11-08T11:28:42.9",
-      "Amount": 0,
-      "Paid": false,
-      "Expense": false,
-      "Remark": false,
-      "Details": []
-    },
-    {
       "ID": 1,
       "Text": "Demo AG",
       "Date": "2016-11-06T10:50:04.1195889",

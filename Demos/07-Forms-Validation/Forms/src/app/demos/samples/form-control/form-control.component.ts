@@ -37,6 +37,6 @@ export class FormControlComponent implements OnInit {
   }
 
   resetName() {
-    this.name.reset('Cleo');
+    this.name.reset('Giro');
   }
 }

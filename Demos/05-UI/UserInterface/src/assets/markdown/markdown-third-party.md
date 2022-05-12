@@ -7,7 +7,7 @@ npm i -S ngx-markdown prismjs
 - Investigate this componentent and markdown-renderer.component.ts in the SharedModule
 - Investigate its registration and usage in DemoModule
 
-```
+```json
 "styles": [
     "src/styles.scss",
     "node_modules/prismjs/themes/prism-okaidia.css"
@@ -32,5 +32,4 @@ export interface Skill {
   hours: number;
   completed: boolean;
 }
-
 ```

@@ -6,7 +6,7 @@
     npm i -g json-server
     ```
 
-- Create a database file for json-server (db.json):
+- Create a database file for json-server (db.json) in the root of the starter project:
 
     ```
     {
@@ -27,4 +27,20 @@
 
     ```
     ng g s food/food
+    ```
+
+- Don't forget to handle data change events
+
+    ```typescript
+    ngOnChanges(changes: SimpleChanges): void {
+        if (changes['modelclass']) {
+        console.log('receiving updated modelclass:', changes['modelclass'].currentValue);
+        }
+    }
+    ```
+
+- If you want to generate the id manually you could use this code fragment:
+
+    ```typescript
+    const nextId = food.reduce((acc, f) => (acc = acc > f.id ? acc : f.id), 0) + 1;
     ```
