@@ -1,6 +1,13 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+        <button mat-raised-button color="primary" (click)="onNewFood()">New</button>
+    </mat-toolbar-row>
+</mat-toolbar>
+
 <app-food-list
     [foods]="foods"
-    (selectedFood)="onFoodSelected($event)">
+    (selectedFood)="onFoodSelected($event)"
+    (foodToDelete)="onFoodDelete($event)">
 
 </app-food-list>
 

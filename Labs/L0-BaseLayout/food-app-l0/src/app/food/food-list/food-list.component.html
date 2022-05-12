@@ -3,7 +3,7 @@
         <mat-card-title>Food List</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-        <table mat-table [dataSource]="foods">
+        <table mat-table [dataSource]="dataSource">
             <mat-text-column name="id"></mat-text-column>
 
             <ng-container matColumnDef="name">
@@ -31,6 +31,14 @@
                             ></a
                         >
                     </span>
+                    <span>
+                        <a class="clickable" (click)="deleteFood(food)">
+                            <mat-icon aria-hidden="false" aria-label="Edit"
+                                >delete</mat-icon
+                            ></a
+                        >
+                    </span>
+
                     <!--<a class="clickable" (click)="selectFood(food)">Select</a>-->
                 </td>
             </ng-container>
