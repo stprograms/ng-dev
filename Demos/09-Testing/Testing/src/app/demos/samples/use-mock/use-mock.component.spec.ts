@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthService } from './auth.service';
 import { MockAuthService } from './auth.service.mock';
 import { UseMockComponent } from './use-mock.component';
@@ -13,16 +12,9 @@ describe('UseMockComponent with MockAuth Service', () => {
     comp = new UseMockComponent(ms);
   });
 
-  it('should create', () => {
-    expect(comp).toBeTruthy();
-  });
-  it('should return Authenticated true', () => {
-    expect(comp.loggedIn).toBe(true);
-  });
-
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BrowserAnimationsModule],
+      imports: [],
       declarations: [UseMockComponent],
       providers: [{ provide: AuthService, useValue: ms }],
     }).compileComponents();
@@ -30,6 +22,14 @@ describe('UseMockComponent with MockAuth Service', () => {
     fixture = TestBed.createComponent(UseMockComponent);
     comp = fixture.componentInstance;
     fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(comp).toBeTruthy();
+  });
+
+  it('should return Authenticated true', () => {
+    expect(comp.loggedIn).toBe(true);
   });
 
   it('should have the correct login state on the Template', () => {

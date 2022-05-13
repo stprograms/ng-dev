@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { fromEvent } from 'rxjs';
-import { debounceTime, map } from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-debounced-search',

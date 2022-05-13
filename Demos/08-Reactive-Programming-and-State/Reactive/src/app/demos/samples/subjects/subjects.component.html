@@ -4,8 +4,9 @@
       Using Subjects
     </mat-card-title>
   </mat-card-header>
-  <mat-card-content align="end">
-    <button mat-raised-button (click)="emitNext()" color="accent">Emit next()</button>
+  <mat-card-content>
+    <button mat-raised-button (click)="runSubjectInit()" color="accent">Emit next(5), Subscribe A, B & Emit next(10)</button>
+    <button mat-raised-button (click)="emitNext()" color="accent">Subscribe Late & Emit next(20)</button>
   </mat-card-content>
 </mat-card>
 
@@ -15,7 +16,8 @@
       Using Behaviour Subjects
     </mat-card-title>
   </mat-card-header>
-  <mat-card-content align="end">
-    <button mat-raised-button (click)="emitNextBS()" color="accent">Emit next()</button>
+  <mat-card-content>
+    <button mat-raised-button (click)="runBSubjectInit()" color="accent">Emit next(5), Subscribe BS A, B & Emit next(10)</button>
+    <button mat-raised-button (click)="emitNextBS()" color="accent">Subscribe BS Late & Emit next(20)</button>
   </mat-card-content>
 </mat-card>

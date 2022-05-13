@@ -11,11 +11,11 @@ context('Home', () => {
     });
   });
 
-  describe('Navbar', () => {
+  describe('Intro', () => {
     it('Has the correct Title', () => {
-      cy.get('.navTitle').should(
+      cy.get('.mat-card-title').should(
         'contain.text',
-        'Angular Single Page Application Development'
+        'Angular - Single Page Application Development'
       );
     });
   });

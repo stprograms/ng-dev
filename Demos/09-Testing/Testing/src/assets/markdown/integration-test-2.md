@@ -1,6 +1,6 @@
 # Component with Service Injection
 
-Navigate to folder \demos\shallow-integration
+Navigate to folder \demos\integration-tests
 
 Investigate `shallow-integration.component.html`. Look at the component and instpect it.
 

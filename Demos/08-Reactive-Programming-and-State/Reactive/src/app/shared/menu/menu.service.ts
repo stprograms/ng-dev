@@ -12,8 +12,7 @@ export class MenuService {
     this.handleChange();
   }
 
-  private visible = true;
-  visible$: BehaviorSubject<boolean> = new BehaviorSubject(this.visible);
+  visible$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
   position$: BehaviorSubject<string> = new BehaviorSubject('over');
 
   private handleChange() {
@@ -38,7 +37,7 @@ export class MenuService {
   }
 
   toggleMenu() {
-    this.visible = !this.visible;
-    this.visible$.next(this.visible);
+    let nextVal = !this.visible$.value;
+    this.visible$.next(nextVal);
   }
 }

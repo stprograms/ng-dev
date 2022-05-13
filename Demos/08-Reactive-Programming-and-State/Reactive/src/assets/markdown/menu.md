@@ -1,19 +1,12 @@
-- Start json-server using
-
-```
-json-server db.json
-```
-- Explain Mock-Editor Button on SidePannel and `sidepanel.service.ts`
+- Explain `menu.service.ts`
 
 ```typescript
-toggleEditor() {
-    this.editorDisplayed = !this.editorDisplayed;
-    this.eb.triggerCmd(
-      this.editorDisplayed
-        ? SidebarActions.SHOW_MARKDOWN
-        : SidebarActions.HIDE_MARKDOWN
-    );
+export class MenuService {
+  constructor(private mediaObserver: MediaObserver) {
+    this.handleChange();
   }
+  visible$: BehaviorSubject<boolean> = new BehaviorSubject(true);
+  position$: BehaviorSubject<string> = new BehaviorSubject('over');
 ```
 
 - Explain `menu.service.ts` and its responsive behavior when changing screen width. Also mention `navbar.component.ts` and the Hamburger-Menu.

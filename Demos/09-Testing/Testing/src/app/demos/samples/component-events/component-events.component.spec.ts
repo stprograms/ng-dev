@@ -6,13 +6,11 @@ describe('Component - Events - EventsComponent', () => {
   let component: ComponentEventsComponent;
   let fixture: ComponentFixture<ComponentEventsComponent>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [ComponentEventsComponent],
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [ComponentEventsComponent],
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ComponentEventsComponent);
@@ -38,12 +36,14 @@ describe('Component - Events - EventsComponent', () => {
   it('should increment the count - Native Api', () => {
     const divClick = fixture.debugElement.query(By.css('#clickable'));
     divClick.nativeElement.click();
+    divClick.nativeElement.click();
+    divClick.nativeElement.click();
     fixture.detectChanges();
 
-    expect(component.count).toBe(1);
+    expect(component.count).toBe(3);
 
     // Actually not needed as this would test Angular - just to show
     const divResult = fixture.debugElement.query(By.css('.result'));
-    expect(divResult.nativeElement.innerText).toContain('1');
+    expect(divResult.nativeElement.innerText).toContain('3');
   });
 });

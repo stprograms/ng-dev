@@ -18,6 +18,7 @@ export class CreatingObservableComponent implements OnInit {
 
   useObsFrom() {
     let arr = [2, 5, 9, 12, 22];
+    //emit each item from the array after the other
     from(arr).subscribe(
       (data: number) => console.log('from(): ', data),
       this.onErr,

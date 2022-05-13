@@ -1,3 +1,3 @@
-Flex Layout Api
-
-Resize Window & notice changes
+- Flex Layout Api
+- Resize Window & notice changes
+- We will use this in menu.service.ts later on

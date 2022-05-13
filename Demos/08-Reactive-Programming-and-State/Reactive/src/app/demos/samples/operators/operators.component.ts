@@ -55,7 +55,9 @@ export class OperatorsComponent implements OnInit {
   }
 
   useMapAndTap() {
-    from([2, 10, 20])
+    let arr$ = from([2, 10, 20]);
+
+    arr$
       .pipe(
         tap((i) => console.log('tap before', i)),
         map((a) => a * 2),

@@ -23,6 +23,7 @@ describe('InjectionComponent', () => {
       imports: [CommonModule, HttpClientTestingModule],
       providers: [{ provide: FoodService, useValue: fs }],
     }).compileComponents();
+
     fixture = TestBed.createComponent(InjectionComponent);
     de = fixture.debugElement;
     comp = fixture.componentInstance;
