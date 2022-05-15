@@ -26,7 +26,7 @@
 }
 
 .mat-card-actions {
-  padding: var(--gap-medium);
+  padding: var(--gap-medium) !important;
   margin-left: var(--gap-medium) !important;
   margin-right: var(--gap-medium) !important;
   margin-bottom: var(--gap-medium) !important;
@@ -38,6 +38,11 @@ button.mat-raised-button{
   :hover{
     text-decoration: underline;
   }
+}
+
+//mat-toolbar
+.mat-toolbar{
+  margin-bottom: var(--gap-small);
 }
 
 //mat-snackbar

@@ -1,10 +1,4 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>
-      Resize window and watch change - Inspect Tags on mat-card in *.html
-    </mat-card-title>
-  </mat-card-header>
-</mat-card>
+<app-markdown-renderer [md]="'flexlayout'"></app-markdown-renderer>
 
 <mat-card>
   <mat-card-header
@@ -40,9 +34,9 @@
         <mat-form-field fxFlex>
           <input
             matInput
-            type="text"
-            placeholder="LASTNAME"
-            [value]="current.lastname"
+            type="number"
+            placeholder="Age"
+            [value]="current.age"
           />
         </mat-form-field>
       </div>

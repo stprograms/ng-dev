@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { SnackbarService } from 'src/app/shared/snackbar/snackbar.service';
 
 @Component({
-  selector: 'app-using-material',
-  templateUrl: './using-material.component.html',
-  styleUrls: ['./using-material.component.scss'],
+  selector: 'app-material-showcase',
+  templateUrl: './material-showcase.component.html',
+  styleUrls: ['./material-showcase.component.scss'],
 })
-export class UsingMaterialComponent implements OnInit {
+export class MaterialShowCaseComponent implements OnInit {
   card = '/assets/images/CleoSoi.jpg';
   count = 3;
   public images = ['giraffe', 'monkey', 'elefant'];

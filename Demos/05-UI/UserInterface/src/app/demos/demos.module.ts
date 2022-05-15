@@ -26,7 +26,7 @@ import { GoogleFontsComponent } from './samples/google-fonts/google-fonts.compon
 import { InlineCssComponent } from './samples/inline-css/inline-css.component';
 import { MarkdownThirdPartyComponent } from './samples/markdown-third-party/markdown-third-party.component';
 import { MaterialDialogComponent } from './samples/material-dialog/material-dialog.component';
-import { UsingMaterialComponent } from './samples/material-showcase/using-material.component';
+import { MaterialShowCaseComponent } from './samples/material-showcase/material-showcase.component';
 import { StepperComponent } from './samples/material-stepper/stepper.component';
 import { MaterialTableComponent } from './samples/material-table/material-table.component';
 import { VirtualScrollComponent } from './samples/virtual-scroll/virtual-scroll.component';
@@ -42,7 +42,7 @@ const demoRoutes: Routes = [
       { path: 'bootstrap', component: BoostrapComponent },
       { path: 'cssgrid', component: CssgridComponent },
       { path: 'cssgrid-flex', component: CssgridFlexlayoutComponent },
-      { path: 'material', component: UsingMaterialComponent },
+      { path: 'material', component: MaterialShowCaseComponent },
       { path: 'material-table', component: MaterialTableComponent },
       { path: 'classic-dialog', component: ClassicDialogComponent },
       { path: 'material-dialog', component: MaterialDialogComponent },
@@ -65,7 +65,7 @@ const demoRoutes: Routes = [
     CSSBindingComponent,
     CssgridComponent,
     CssgridFlexlayoutComponent,
-    UsingMaterialComponent,
+    MaterialShowCaseComponent,
     MaterialTableComponent,
     MaterialDialogComponent,
     GoogleFontsComponent,

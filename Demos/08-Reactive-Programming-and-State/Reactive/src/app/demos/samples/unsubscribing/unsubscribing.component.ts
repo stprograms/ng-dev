@@ -1,5 +1,11 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription, fromEvent } from 'rxjs';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnDestroy,
+  ViewChild,
+} from '@angular/core';
+import { fromEvent, Subscription } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
 @Component({
@@ -7,25 +13,26 @@ import { map, tap } from 'rxjs/operators';
   templateUrl: './unsubscribing.component.html',
   styleUrls: ['./unsubscribing.component.scss'],
 })
-export class UnsubscribingComponent implements OnInit, OnDestroy {
+export class UnsubscribingComponent implements OnDestroy, AfterViewInit {
+  @ViewChild('signPad', { static: true }) canvas: ElementRef;
+
   constructor() {}
 
-  mouseSubs: Subscription;
+  subMouseEvents: Subscription;
   result: { X: number; Y: number } = { X: 0, Y: 0 };
 
-  ngOnInit() {
-    this.subscribeScreen();
+  ngAfterViewInit(): void {
+    this.subscribeCanvas();
   }
 
   ngOnDestroy() {
-    this.mouseSubs.unsubscribe();
+    this.subMouseEvents.unsubscribe();
     console.log('Mouse Subscription unsubscribed');
   }
 
-  subscribeScreen() {
-    const pad = document.querySelector('.signPad');
-    if (pad) {
-      const mouse = fromEvent(pad, 'mousemove').pipe(
+  subscribeCanvas() {
+    if (this.canvas) {
+      const evtMouse = fromEvent(this.canvas.nativeElement, 'mousemove').pipe(
         tap((data: any) => console.log('original data', data)),
         map((evt: MouseEvent) => {
           return { X: evt.clientX, Y: evt.clientY };
@@ -33,7 +40,7 @@ export class UnsubscribingComponent implements OnInit, OnDestroy {
         tap((data: any) => console.log('modfied data', data))
       );
 
-      this.mouseSubs = mouse.subscribe((point) => {
+      this.subMouseEvents = evtMouse.subscribe((point) => {
         this.result = point;
         console.log('Mouse Moved @: ', point);
       });
@@ -41,7 +48,7 @@ export class UnsubscribingComponent implements OnInit, OnDestroy {
   }
 
   unsubscribeMouseEvt() {
-    this.mouseSubs.unsubscribe();
+    this.subMouseEvents.unsubscribe();
     console.log('unsubscribed from Mouse Event');
   }
 }

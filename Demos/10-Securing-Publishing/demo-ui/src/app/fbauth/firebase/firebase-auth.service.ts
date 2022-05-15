@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { LoginCredentials } from './credential.model';
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
