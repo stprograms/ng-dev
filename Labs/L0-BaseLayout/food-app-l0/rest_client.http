@@ -1,0 +1,24 @@
+### Get list of all foods
+http://localhost:3000/food
+
+### Get food with id 3
+http://localhost:3000/food/3
+
+### Post a new food into the database
+POST http://localhost:3000/food 
+content-type: application/json
+
+{
+    "name" : "Test Food",
+    "price" : 45,
+    "calories" : 1234
+}
+
+### Post new store in stores list
+POST http://localhost:3000/stores
+content-type: application/json
+
+{
+    "name" : "Türke",
+    "location" : "Auhof Center"
+}
