@@ -1,3 +1,1 @@
-Flex Layout Api
-
-Resize Window & notice changes
+- Resize Window & notice changes

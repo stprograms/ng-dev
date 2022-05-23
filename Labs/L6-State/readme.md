@@ -5,7 +5,7 @@ Implement a responsive Side Menu:
 - Implement a menu.service as a Stateful Service using BehaviorSubjects with the two properties:
 
     - sideNavVisible: boolean
-    - sideNavPosition: over | push | side
+    - sideNavPosition: over | side
 
 - Add a Material Sidenav to app.component   
 
@@ -25,7 +25,7 @@ Implement a responsive Side Menu:
         [mode]="mode">
             <app-sidebar></app-sidebar>
         </mat-sidenav>
-        <mat-sidenav-content [ngStyle]="getWorbenchStyle()">
+        <mat-sidenav-content [ngStyle]="getWorkbenchStyle()">
             <router-outlet></router-outlet>
         </mat-sidenav-content>
         </mat-sidenav-container>

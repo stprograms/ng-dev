@@ -7,7 +7,7 @@ context('Demos', () => {
 
   describe('Left Menu', () => {
     it('Has 15 options in Testing menu', () => {
-      cy.get('button.mat-raised-button').should('have.length', 15);
+      cy.get('mat-list-item').should('have.length', 15);
     });
 
     it('Shows the correct content when clicking test pipe', () => {

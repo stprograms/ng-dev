@@ -1,0 +1,2 @@
+- Resize window to xs and watch change 
+- Inspect Media Queries in *.scss

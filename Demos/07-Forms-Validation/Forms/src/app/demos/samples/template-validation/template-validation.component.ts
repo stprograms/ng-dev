@@ -22,6 +22,10 @@ export class TemplateValidationComponent implements OnInit {
     });
   }
 
+  patchValue() {
+    this.form.controls['name'].setValue('Heinrich');
+  }
+
   savePerson(personForm): void {
     this.ps.save(personForm);
   }

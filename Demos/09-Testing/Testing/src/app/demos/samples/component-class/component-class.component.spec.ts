@@ -1,6 +1,5 @@
-import { ComponentClassComponent } from './component-class.component';
-import { foodAddItem } from '../foodService/food.mocks';
 import { FoodItem } from '../foodService/food.model';
+import { ComponentClassComponent } from './component-class.component';
 
 describe('ComponentClassComponent', () => {
   let component: ComponentClassComponent;

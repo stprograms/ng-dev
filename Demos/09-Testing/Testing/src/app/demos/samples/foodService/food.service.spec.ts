@@ -64,7 +64,7 @@ describe('Service - HttpTestingController', () => {
     // flushing down mock data
     req.flush(foodAddedItem);
     // make sure all requests are completed -> can be moved to afterEach
-    // controller.verify();
+    controller.verify();
   });
 
   it('should update a food item', () => {

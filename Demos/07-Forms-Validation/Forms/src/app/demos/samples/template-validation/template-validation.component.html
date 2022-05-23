@@ -59,7 +59,13 @@
           <mat-option value="female">Female</mat-option>
         </mat-select>
       </mat-form-field>
-
+      <button
+        mat-raised-button        
+        color="accent"
+        (click)="patchValue()"
+      >
+        Patch Value
+      </button>
       <button
         mat-raised-button
         type="submit"
