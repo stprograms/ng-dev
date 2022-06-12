@@ -146,7 +146,6 @@
       }
     }
   },
-  "defaultProject": "ng-demo-app",
   "cli": {
     "analytics": false
   }

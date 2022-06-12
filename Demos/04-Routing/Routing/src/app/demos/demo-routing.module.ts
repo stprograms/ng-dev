@@ -8,10 +8,10 @@ import { PmChildComponent } from './samples/paramMap/pm-child/pm-child.component
 import { PreloadComponent } from './samples/preload/preload.component';
 import { RouteGuardsComponent } from './samples/route-guards/route-guards.component';
 import { RouterAnimationsComponent } from './samples/router-animations/router-animations.component';
-import { RouterEventsComponent } from './samples/router-events/router-events.component';
 import { RouterStateComponent } from './samples/router-state/router-state.component';
 import { RoutingBasicsComponent } from './samples/routing-basics/routing-basics.component';
 import { SecondaryRoutesComponent } from './samples/secondary-routes/secondary-routes.component';
+import { StandaloneComponent } from './samples/standalone/standalone.component';
 
 export const demoRoutes: Routes = [
   {
@@ -30,11 +30,14 @@ export const demoRoutes: Routes = [
       { path: 'routeguards', component: RouteGuardsComponent },
       { path: 'preload', component: PreloadComponent },
       { path: 'lazy-loading', component: LazyLoadingComponent },
-      { path: 'events', component: RouterEventsComponent },
       { path: 'router-animation', component: RouterAnimationsComponent },
       {
         path: 'component-less',
         component: ComponentLessComponent,
+      },
+      {
+        path: 'standalone-comp',
+        component: StandaloneComponent,
       },
     ],
   },

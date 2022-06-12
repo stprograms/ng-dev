@@ -14,6 +14,7 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 ![demo-container.component](_images/demo-container.png)
 
 ## Topics covered in the class
+
 ### Angular Introduction & Setup
 
 - What is a Single Page Application? – SPA
@@ -57,10 +58,14 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 
 - Routing Basics
 - Working with Parameterized Routes
+- Using Router State
 - Child- & Secondary (Auxiliary) Routes
-- Preloading Component Data
 - Organizing Angular Applications using Modules
 - Module Lazy Loading
+- Standalone Components
+- Component Less Routing
+- Route Guards & Data Preloading
+- Router Animations
 
 ### Designing the User Interface
 
@@ -74,26 +79,30 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 - Using Material Tables, Dialogs & Form Controls
 - Using Angular CDK & 3rd Party Components (Charting, File Upload, Drag & Drop)
 
+### Consuming RESTful Services
+
+- RESTful APIs Overview
+- Implementing the Client-Side Data Models
+- Implementing CRUD Operations on RESTful APIs
+- Using JSON Server as API for Prototyping
+- Observe Response and Custom Http Headers
+
 ### Forms Design & Validation
 
 - Forms Introduction
 - Template Driven Forms vs Reactive (Model Based) Forms
+- Typed Forms
+- Forms Builder
 - FormControl, FormGroups & FormArrays
 - Validating Forms
 - Custom- & Code-Based Validators
-
-### Consuming RESTful Services
-
-- Introduction Into .NET Core
-- Implementing Consuming .NET Core RESTful APIs
-- Using JSON Server for Prototyping
-- Implementing the Client-Side Data Models
 
 ### Observables & Reactive Programming
 
 - What is Reactive Programming / Benefits
 - Observable, Observer & Subject
 - Creating Observables & Casting to Observables
+- Using the async pipe
 - Capturing Mouse & DOM Events as Observables
 - Subscribing to Routes & Params, Flex Layout API
 - Using Common RxJS Operators
@@ -105,22 +114,26 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 - Stateless & Stateful Services
 - Sharing Data between deeply Nested Components
 - Service Bus & Sharing Events between deeply Nested Components
-- Overview of the Redux Pattern with NgRx HelloWorld
+- Implementing a loading Indicator
 
 ### Testing Basics
 
 - Unit Tests vs Integration Tests
 - Karma & Jasmine Basics
-- Test Setup & Mocking
-- Testing Angular Components, Services and Forms
-- In Short: End to End Testing
+- Test Setup & Mocking Data
+- Testing Classes, Directives and Pipes
+- Using Spies and Injections
+- Http-Testing and HttpTestingController
+- Intro to Component Testing: Testbed and Testing Module
+- Component DOM Testing
+- Interacting with Components in Tests
+- In Short: End to End Testing using Cypress
 
 ### Securing & Publishing Angular
 
 - Authentication / Authorization Basics in SPAs
 - Token based Auth: Understanding Jwt, OAuth 2.0 & OpenID Connect
 - Securing Angular Routes using Route Guards
-- Using Interceptors to Automate Tokens
-- Preparing & Creating a Production Build
+- Using Interceptors to Automate Authentication Tokens
 - Hosting Option Overview (Docker, Firebase, Azure CDN, …)
 - Mastering Url Rewrite

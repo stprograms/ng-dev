@@ -4,66 +4,48 @@ import {
   Input,
   Output,
   EventEmitter,
-  SimpleChanges
-} from "@angular/core";
-import { FoodItem } from "src/app/shared/foodItem";
-import { MatTableDataSource } from "@angular/material/table";
+  SimpleChanges,
+  OnChanges,
+} from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { FoodItem } from '../food.model';
 
 @Component({
-  selector: "app-food-list",
-  templateUrl: "./food-list.component.html",
-  styleUrls: ["./food-list.component.scss"]
+  selector: 'app-food-list',
+  templateUrl: './food-list.component.html',
+  styleUrls: ['./food-list.component.scss'],
 })
-export class FoodListComponent implements OnInit {
+export class FoodListComponent implements OnInit, OnChanges {
   constructor() {}
 
   @Input()
-  food: FoodItem[];
+  food: FoodItem[] = [];
   @Output()
-  editSelected: EventEmitter<FoodItem> = new EventEmitter();
+  foodSelected: EventEmitter<FoodItem> = new EventEmitter();
   @Output()
-  deleteSelected: EventEmitter<FoodItem> = new EventEmitter();
+  foodDeleted: EventEmitter<FoodItem> = new EventEmitter();
+
+  displayedColumns: string[] = [
+    'id',
+    'name',
+    'price',
+    'calories',
+    'editItem',
+    'deleteItem',
+  ];
+  dataSource = new MatTableDataSource([]);
 
   ngOnInit() {}
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes.food.currentValue);
-    this.dataSource = new MatTableDataSource(changes.food.currentValue);
+    this.dataSource = new MatTableDataSource(changes['food'].currentValue);
   }
 
-  displayedColumns: string[] = [
-    "id",
-    "name",
-    "price",
-    "calories",
-    "deleteItem",
-    "editItem"
-  ];
-  dataSource: MatTableDataSource<FoodItem> = new MatTableDataSource([]);
-
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+  selectFood(f: FoodItem) {
+    this.foodSelected.emit(f);
   }
 
-  addFood() {
-    console.log(this.getNextId());
-    this.editSelected.emit({
-      id: this.getNextId(),
-      name: "",
-      price: 0,
-      calories: 0
-    });
-  }
-
-  getNextId(): number {
-    return this.food.reduce((acc, f) => (acc = acc > f.id ? acc : f.id), 0) + 1;
-  }
-
-  selectFood(p: FoodItem) {
-    this.editSelected.emit(p);
-  }
-
-  deleteFood(p: FoodItem) {
-    this.deleteSelected.emit(p);
+  deleteFood(f: FoodItem) {
+    this.foodDeleted.emit(f);
   }
 }

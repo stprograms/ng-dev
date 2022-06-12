@@ -152,9 +152,10 @@
       }
     }
   },
-  "defaultProject": "ng-demo-app",
   "cli": {
     "analytics": "f2d89f3a-e755-4b17-a317-ef1336feb527",
-    "defaultCollection": "@angular-eslint/schematics"
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }

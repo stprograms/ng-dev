@@ -37,9 +37,10 @@ export class RegisterComponent implements OnInit {
     this.as.registerUser(form.value.email, form.value.passwords.password);
   }
 
-  passwordConfirming(c: AbstractControl): { invalid: boolean } {
-    if (c.get('password').value !== c.get('passwordRepeat').value) {
+  passwordConfirming(c: AbstractControl): { invalid: boolean } | null {
+    if (c.get('password')?.value !== c.get('passwordRepeat')?.value) {
       return { invalid: true };
     }
+    return null;
   }
 }

@@ -14,20 +14,18 @@ export class FoodService {
   constructor(private httpClient: HttpClient) {}
 
   getFood(): Observable<FoodItem[]> {
-    return this.httpClient.get<FoodItem[]>(this.url).pipe(delay(2000)); //slow down request to see loading interceptor
+    return this.httpClient.get<FoodItem[]>(this.url);
   }
 
   addFood(food: FoodItem): Observable<FoodItem> {
-    return this.httpClient.post<FoodItem>(this.url, food).pipe(delay(2000)); //slow down request to see loading interceptor
+    return this.httpClient.post<FoodItem>(this.url, food);
   }
 
   updateFood(food: FoodItem): Observable<FoodItem> {
-    return this.httpClient
-      .put<FoodItem>(`${this.url}/${food.id}`, food)
-      .pipe(delay(2000)); //slow down request to see loading interceptor
+    return this.httpClient.put<FoodItem>(`${this.url}/${food.id}`, food);
   }
 
   deleteFood(id: number): Observable<any> {
-    return this.httpClient.delete(`${this.url}/${id}`).pipe(delay(2000)); //slow down request to see loading interceptor
+    return this.httpClient.delete(`${this.url}/${id}`);
   }
 }

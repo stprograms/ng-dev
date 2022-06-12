@@ -1,35 +1,32 @@
-import { Injectable } from "@angular/core";
-import { BehaviorSubject, Observable, of } from "rxjs";
-import { AngularFireAuth } from "@angular/fire/auth";
-import * as firebase from "firebase";
+import { Injectable } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root',
 })
 export class FBAuthService {
   constructor(private fireAuth: AngularFireAuth) {
     this.onUserChanged();
   }
 
-  private persistence = firebase.auth.Auth.Persistence.NONE;
-  private Token: BehaviorSubject<string> = new BehaviorSubject<string>("");
+  private Token: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
-  private fbUser: firebase.User = null;
-  public User: BehaviorSubject<firebase.User> = new BehaviorSubject(
-    this.fbUser
-  );
+  private fbUser: firebase.default.User | null = null;
+  public User: BehaviorSubject<firebase.default.User | null> =
+    new BehaviorSubject(this.fbUser);
 
   private onUserChanged() {
-    this.fireAuth.auth.onAuthStateChanged(user => {
+    this.fireAuth.authState.subscribe((user) => {
       this.fbUser = user;
       this.User.next(user);
 
       if (user != null) {
-        this.fbUser.getIdToken().then(token => {
+        this.fbUser?.getIdToken().then((token) => {
           this.Token.next(token);
         });
       } else {
-        this.Token.next(null);
+        this.Token.next('');
       }
     });
   }
@@ -39,8 +36,8 @@ export class FBAuthService {
   }
 
   isAuthenticated(): Observable<boolean> {
-    this.User.subscribe(user => {
-      let auth: boolean = user == null ? false : true;
+    this.User.subscribe((user) => {
+      const auth: boolean = user == null ? false : true;
       return of(auth);
     });
     return of(false);
@@ -49,49 +46,33 @@ export class FBAuthService {
   registerUser(
     email: string,
     password: string
-  ): Promise<firebase.auth.UserCredential> {
-    return new Promise<firebase.auth.UserCredential>((resolve, reject) => {
-      firebase
-        .auth()
-        .setPersistence(this.persistence)
-        .then(() => {
-          this.fireAuth.auth
-            .createUserWithEmailAndPassword(email, password)
-            .then(cred => resolve(cred))
-            .catch(err => {
-              console.log("Error logging in", err);
-              reject(err);
-            });
-        });
-    });
+  ): Promise<firebase.default.auth.UserCredential> {
+    return this.fireAuth
+      .createUserWithEmailAndPassword(email, password)
+      .catch((err) => {
+        console.log('Error logging in', err);
+        return err;
+      });
   }
 
   logOn(
     email: string,
     password: string
-  ): Promise<firebase.auth.UserCredential> {
-    return new Promise<firebase.auth.UserCredential>((resolve, reject) => {
-      firebase
-        .auth()
-        .setPersistence(this.persistence)
-        .then(() => {
-          this.fireAuth.auth
-            .signInWithEmailAndPassword(email, password)
-            .then(cred => resolve(cred))
-            .catch(err => {
-              console.log("Error logging in", err);
-              reject(err);
-            });
-        });
-    });
+  ): Promise<firebase.default.auth.UserCredential> {
+    return this.fireAuth
+      .signInWithEmailAndPassword(email, password)
+      .catch((err) => {
+        console.log('Error logging in', err);
+        return err;
+      });
   }
 
   logOff() {
-    this.fireAuth.auth
+    this.fireAuth
       .signOut()
       .then(() => {
         this.fbUser = null;
       })
-      .catch(err => console.log("Error logging out", err));
+      .catch((err) => console.log('Error logging out', err));
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
 
 @Component({
@@ -10,7 +10,7 @@ import { debounceTime } from 'rxjs/operators';
 export class DebouncedSearchComponent implements OnInit {
   constructor() {}
 
-  searchterm: FormControl = new FormControl('');
+  searchterm: UntypedFormControl = new UntypedFormControl('');
 
   ngOnInit() {
     this.searchterm.valueChanges.pipe(debounceTime(750)).subscribe((val) => {

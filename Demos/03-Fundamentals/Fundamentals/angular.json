@@ -144,7 +144,6 @@
       }
     }
   },
-  "defaultProject": "ng-demo-app",
   "cli": {
     "analytics": "805f8b2e-cca7-4831-b9b5-2257515c1660"
   }

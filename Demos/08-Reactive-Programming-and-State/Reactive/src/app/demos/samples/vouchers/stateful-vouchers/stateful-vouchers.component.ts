@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { StatefulVoucherService } from '../stateful-voucher.service';
 import { Voucher } from '../voucher.model';
@@ -10,7 +10,7 @@ import { Voucher } from '../voucher.model';
   styleUrls: ['./stateful-vouchers.component.scss'],
 })
 export class StatefulVouchersComponent implements OnInit {
-  filter = new FormControl('');
+  filter = new UntypedFormControl('');
   vouchers = this.vs.getAllVouchers();
   dataSource: MatTableDataSource<Voucher>;
   displayedColumns = ['ID', 'Text', 'Date', 'Amount', 'deleteItem'];

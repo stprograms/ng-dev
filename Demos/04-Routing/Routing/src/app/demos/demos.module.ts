@@ -18,7 +18,6 @@ import { PmChildComponent } from './samples/paramMap/pm-child/pm-child.component
 import { PreloadComponent } from './samples/preload/preload.component';
 import { RouteGuardsComponent } from './samples/route-guards/route-guards.component';
 import { RouterAnimationsComponent } from './samples/router-animations/router-animations.component';
-import { RouterEventsComponent } from './samples/router-events/router-events.component';
 import { RouterStateComponent } from './samples/router-state/router-state.component';
 import { RoutingBasicsComponent } from './samples/routing-basics/routing-basics.component';
 import { SecondaryRoutesComponent } from './samples/secondary-routes/secondary-routes.component';
@@ -37,7 +36,6 @@ import { SecondaryRoutesComponent } from './samples/secondary-routes/secondary-r
     LazyLoadingComponent,
     RouterStateComponent,
     RouterAnimationsComponent,
-    RouterEventsComponent,
   ],
   imports: [
     CommonModule,

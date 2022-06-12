@@ -9,7 +9,6 @@ import { SharedModule } from '../shared/shared.module';
 import { DemoContainerComponent } from './demo-container/demo-container.component';
 import { FirebaseComponent } from './samples/firebase/firebase.component';
 import { FirebaseAuthInterceptor } from '../fbauth/firebase/firebase-auth.interceptor';
-import { MsalComponent } from './samples/msal/msal.component';
 import { DemoService } from './demo-base/demo.service';
 import { LoadingService } from '../shared/loading/loading.service';
 import { LoadingInterceptor } from '../shared/loading/loading-interceptor';
@@ -19,15 +18,12 @@ const demoRoutes: Routes = [
     path: '',
     component: DemoContainerComponent,
 
-    children: [
-      { path: 'firebase', component: FirebaseComponent },
-      { path: 'msal', component: MsalComponent },
-    ],
+    children: [{ path: 'firebase', component: FirebaseComponent }],
   },
 ];
 
 @NgModule({
-  declarations: [DemoContainerComponent, FirebaseComponent, MsalComponent],
+  declarations: [DemoContainerComponent, FirebaseComponent],
   imports: [
     CommonModule,
     FormsModule,

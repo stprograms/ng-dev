@@ -24,6 +24,10 @@
     "title": "Lazy Loading"
   },
   {
+    "url": "standalone-comp",
+    "title": "Standalone Component"
+  },
+  {
     "url": "component-less",
     "title": "Component Less"
   },
@@ -39,9 +43,5 @@
   {
     "url": "router-animation",
     "title": "Router Animations"
-  },
-  {
-    "url": "events",
-    "title": "Router Events"
   }
 ]

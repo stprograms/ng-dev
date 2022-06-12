@@ -1,9 +1,8 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {
-  FormBuilder,
-  FormGroup,
+  UntypedFormControl,
+  UntypedFormGroup,
   Validators,
-  FormControl,
 } from '@angular/forms';
 
 @Component({
@@ -14,11 +13,11 @@ import {
 export class MaterialComponent {
   value = 50;
   validated = false;
-  sliderForm: FormGroup;
+  sliderForm: UntypedFormGroup;
 
   constructor() {
-    this.sliderForm = new FormGroup({
-      slider: new FormControl(this.value, Validators.min(1)),
+    this.sliderForm = new UntypedFormGroup({
+      slider: new UntypedFormControl(this.value, Validators.min(1)),
     });
 
     this.sliderForm.valueChanges.subscribe((data: any) => {

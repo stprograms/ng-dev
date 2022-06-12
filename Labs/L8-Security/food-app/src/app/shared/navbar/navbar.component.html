@@ -1,7 +1,10 @@
 <mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <div [routerLink]="['/']">Home</div>
-    <div [routerLink]="['/food']">Food</div>
-    <div [routerLink]="['/about']">About</div>
+  <mat-toolbar-row fxLayoutGap="1rem">
+    <div fxHide.gt-md (click)="toggleMenu()" class="clickable">
+      <mat-icon color="accent">menu</mat-icon>
+    </div>
+    <div class="navLink" [routerLink]="['/']">Home</div>
+    <div class="navLink" [routerLink]="['/food']">Food</div>
+    <div class="navLink" [routerLink]="['/about']">About</div>
   </mat-toolbar-row>
 </mat-toolbar>

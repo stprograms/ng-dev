@@ -115,7 +115,6 @@
       }
     }
   },
-  "defaultProject": "food-app",
   "cli": {
     "analytics": "f3dcc325-7fb0-4587-a598-7e41f28d0c8b"
   }

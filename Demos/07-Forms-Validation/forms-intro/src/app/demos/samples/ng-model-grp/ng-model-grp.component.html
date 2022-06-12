@@ -1,0 +1,101 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title> Template Driven </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form
+      #personForm="ngForm"
+      (ngSubmit)="savePerson(personForm)"
+      novalidate
+      fxLayout="column"
+    >
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          placeholder="Name"
+          name="name"
+          [(ngModel)]="person.name"
+          required
+          minlength="4"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="number"
+          placeholder="Age"
+          name="age"
+          [(ngModel)]="person.age"
+          min="18"
+          max="99"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          placeholder="email"
+          name="email"
+          [(ngModel)]="person.email"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select
+          placeholder="Gender"
+          name="gender"
+          [(ngModel)]="person.gender"
+        >
+          <mat-option value="male">Male</mat-option>
+          <mat-option value="female">Female</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-radio-group
+        aria-label="Select an option"
+        name="wealth"
+        [(ngModel)]="person.wealth"
+      >
+        <mat-label>Wealth:</mat-label>
+        <mat-radio-button *ngFor="let opt of wealthOpts" value="{{ opt }}">{{
+          opt
+        }}</mat-radio-button>
+      </mat-radio-group>
+      
+      <div ngModelGroup="address" fxLayout="column" class="address" *ngIf="person.address">
+        <mat-form-field>
+          <input
+            matInput
+            [(ngModel)]="person.address.street"
+            placeholder="Enter street address"
+            name="street"
+            #street="ngModel"
+          />
+        </mat-form-field>
+
+        <mat-form-field>
+          <input
+            matInput
+            [(ngModel)]="person.address.city"
+            placeholder="Enter city"
+            name="city"
+            #city="ngModel"
+          />
+        </mat-form-field>
+
+        <mat-form-field>
+          <input
+            matInput
+            #postalCode="ngModel"
+            [(ngModel)]="person.address.postalCode"
+            placeholder="Enter postal code"
+            name="postalCode"
+          />
+        </mat-form-field>
+      </div>
+      <button mat-raised-button color="accent" type="submit">Submit</button>
+    </form>
+  </mat-card-content>
+</mat-card>

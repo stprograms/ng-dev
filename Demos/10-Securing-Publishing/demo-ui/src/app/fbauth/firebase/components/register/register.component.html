@@ -12,7 +12,7 @@
           id="username"
           formControlName="email"
         />
-        <mat-error *ngIf="registerForm.get('email').errors != undefined"
+        <mat-error *ngIf="registerForm.get('email')?.errors != undefined"
           >Keine oder ungültige E-Mail-Adresse
         </mat-error>
       </mat-form-field>
@@ -27,7 +27,7 @@
             formControlName="password"
           />
           <mat-error
-            *ngIf="registerForm.get('passwords.password').errors != undefined"
+            *ngIf="registerForm.get('passwords.password')?.errors != undefined"
             >Min 4 Zeichen
           </mat-error>
         </mat-form-field>
@@ -42,10 +42,10 @@
         </mat-form-field>
         <mat-error
           *ngIf="
-            registerForm.get(['passwords', 'passwordRepeat']).touched &&
-            registerForm.get(['passwords', 'password']).value !=
-              registerForm.get(['passwords', 'passwordRepeat']).value &&
-            registerForm.get(['passwords', 'passwordRepeat']).value != null
+            registerForm.get(['passwords', 'passwordRepeat'])?.touched &&
+            registerForm.get(['passwords', 'password'])?.value !=
+              registerForm.get(['passwords', 'passwordRepeat'])?.value &&
+            registerForm.get(['passwords', 'passwordRepeat'])?.value != null
           "
           >Password does not match
         </mat-error>

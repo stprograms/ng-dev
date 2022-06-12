@@ -32,7 +32,7 @@ export class FoodContainerComponent implements OnInit {
     });
   }
 
-  foodSaved(f: FoodItem) {
+  saveFood(f: FoodItem) {
     if (f.id) {
       this.fs.updateFood(f).subscribe((result) => {
         let existing = this.food.find((f) => f.id == result.id);

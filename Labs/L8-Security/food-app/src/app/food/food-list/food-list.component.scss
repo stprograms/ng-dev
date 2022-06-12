@@ -6,15 +6,7 @@ table {
   width: 100%;
 }
 
-// .mat-column-COLNAME
-.mat-column-name {
-  width: 65%;
-}
-
-mat-card-content {
-  padding-top: 2rem;
-}
-
-mat-icon {
-  margin-right: 10px;
+mat-icon{
+  cursor: pointer;
+  margin-top: 0.6rem;
 }

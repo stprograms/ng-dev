@@ -19,9 +19,11 @@ export class SkillsListComponent implements OnInit {
   }
 
   getNextId(): number {
-    return 0;
-    // return (
-    //   this.skills.reduce((acc, f) => (acc = acc > f.id ? acc : f.id), 0) + 1
-    // );
+    return (
+      this.skills.reduce((accumulator: number, currSkill: Skill) => {
+        return (accumulator =
+          accumulator > currSkill?.id ? accumulator : currSkill?.id);
+      }, 0) + 1
+    );
   }
 }

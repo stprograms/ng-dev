@@ -27,7 +27,6 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
             "scripts": [],
@@ -96,7 +95,6 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -117,7 +115,6 @@
       }
     }
   },
-  "defaultProject": "food-app",
   "cli": {
     "analytics": "b93089cb-dc75-49cd-830f-66f32f6c124c"
   }
